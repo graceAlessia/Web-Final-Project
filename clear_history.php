@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+include 'server/db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     if (isset($_SESSION['user_id'])) {
@@ -22,4 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 }
 
 $conn->close();
-?>

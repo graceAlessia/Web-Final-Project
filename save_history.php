@@ -1,8 +1,9 @@
 <?php
-include 'db_connection.php';
+include 'server/db_connection.php';
 
 // Password encryption and storage logic
-function encryptPassword($password) {
+function encryptPassword($password)
+{
     $encryption_key = base64_decode('your_secret_key_here');
     $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
     $encrypted = openssl_encrypt($password, 'aes-256-cbc', $encryption_key, 0, $iv);
@@ -32,4 +33,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $conn->close();
-?>

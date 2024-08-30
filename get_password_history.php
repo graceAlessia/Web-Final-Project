@@ -1,7 +1,8 @@
 <?php
-include 'db_connection.php';
+include 'server/db_connection.php';
 
-function decryptPassword($encrypted) {
+function decryptPassword($encrypted)
+{
     $encryption_key = base64_decode('your_secret_key_here');
     list($encrypted_data, $iv) = explode('::', base64_decode($encrypted), 2);
     return openssl_decrypt($encrypted_data, 'aes-256-cbc', $encryption_key, 0, $iv);
@@ -29,4 +30,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 $conn->close();
-?>
