@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets\css\login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container justify-content-center mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -18,6 +18,14 @@
                         <h2>LOGIN</h2>
                     </div>
                     <div class="card-body">
+                        <!-- Display error message if it exists -->
+                        <?php
+                        session_start();
+                        if (isset($_SESSION['error'])) {
+                            echo "<div class='alert alert-danger text-center'>" . $_SESSION['error'] . "</div>";
+                            unset($_SESSION['error']); // Clear error message after showing it
+                        }
+                        ?>
                         <form action="login_process.php" method="post">
                             <div class="form-group">
                                 <label for="username">Username or Email</label>

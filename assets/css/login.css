@@ -1,27 +1,27 @@
 body {
-    background-color: #01012b; 
+    background-color: transparent; 
     background: linear-gradient(to bottom, #01012b, #092047);
-    color: #82C5FF; 
+    color: white; 
     font-family: 'Abel', Arial, Helvetica, sans-serif; 
 }
 
 h2 {
-    color: #82C5FF; 
+    color: white; 
     text-shadow: 0 0 10px #82C5FF, 0 0 20px #82C5FF;
     font-size: 2rem;
     font-weight: 400;
 }
 
 .card {
-    background-color: #0a0a0a; 
-    border: 1px solid #82C5FF;
+    background-color: transparent; 
+    border: 1px solid white;
     box-shadow: 0 0 20px #82C5FF;
     border-radius: 5px;
 }
 
 .btn-primary {
     background-color: #82C5FF;
-    border-color: #82C5FF;
+    border-color: white;
     color: #000;
     font-weight: bold;
     text-shadow: 0 0 10px #82C5FF;
@@ -35,8 +35,8 @@ h2 {
 }
 
 .form-control {
-    background-color: #000; 
-    border: 1px solid #82C5FF;
+    background-color: transparent; 
+    border: 1px solid white;
     color: #ffff;
     box-shadow: 0 0 10px #82C5FF;
     border-radius: 5px;
@@ -44,8 +44,8 @@ h2 {
 }
 
 .form-control:focus {
-    background-color: #1b1b1b;
-    border-color: #82C5FF;
+    background-color: transparent;
+    border-color: white;
     box-shadow: 0 0 10px #82C5FF;
 }
 
@@ -58,8 +58,8 @@ a.text-light:hover {
 }
 
 .card-header, .card-footer {
-    border-bottom: 1px solid #82C5FF;
-    border-top: 1px solid #82C5FF;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
 }
 
 .card-body {

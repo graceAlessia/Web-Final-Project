@@ -1,3 +1,6 @@
+<?php
+session_start(); // Start the session if not already started
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +17,26 @@
 
 <body>
     <nav class="navbar navbar-expand-lg py-3">
-        <div class=" container">
-            <h2 class=" navbar-brand">Cyber Pass</h2>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container">
+            <img src="assets\imgs\Logo.svg" alt="Cyber Pass" style="height:50px; width:auto; " class="logo">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="login.php" style="color: #00ff99; text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;">Login</a>
-                    </li> -->
+            </button> -->
+
+            <ul class="navbar-nav ml-auto">
+                <?php if (!isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="signup.php">Signup</a>
+                        <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="logout.php" style="color: #00ff99; text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;">Logout</a>
-                    </li> -->
-                </ul>
-            </div>
+                            <a class="nav-link" href="signup.php">Signup</a>
+                        </li> -->
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+
         </div>
     </nav>

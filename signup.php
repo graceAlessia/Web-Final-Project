@@ -18,6 +18,12 @@
                         <h2>SIGN UP</h2>
                     </div>
                     <div class="card-body">
+                        <?php
+                        // Check if there is an error and display the appropriate message
+                        if (isset($_GET['error']) && $_GET['error'] == 'username_or_email_exists') {
+                            echo '<div class="alert alert-danger" role="alert">Username or Email already exists. Please choose another.</div>';
+                        }
+                        ?>
                         <form action="signup_process.php" method="post">
                             <div class="form-group">
                                 <label for="username">Username</label>
