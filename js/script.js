@@ -72,7 +72,7 @@ function clearHistory() {
   }
 }
 
-// Copy password to clipboard
+// Copy password to clipboard with a message box
 function copyToClipboard(password, element) {
   const tempInput = document.createElement("input");
   document.body.appendChild(tempInput);
@@ -80,17 +80,41 @@ function copyToClipboard(password, element) {
   tempInput.select();
   document.execCommand("copy");
   document.body.removeChild(tempInput);
-}
 
-// Update slider value display
-function updateSliderValue(value) {
-  document.getElementById("sliderValue").textContent = value;
+  // Create a small message box near the copy button
+  const copyMessage = document.createElement("div");
+  copyMessage.textContent = "Password copied!";
+  copyMessage.className = "copy-message";
+  document.body.appendChild(copyMessage);
+
+  // Position the message near the button
+  const rect = element.getBoundingClientRect();
+  copyMessage.style.position = "absolute";
+  copyMessage.style.top = `${rect.top + window.scrollY - 30}px`;
+  copyMessage.style.left = `${rect.left + window.scrollX}px`;
+  copyMessage.style.backgroundColor = "#092047";
+  copyMessage.style.color = "white";
+  copyMessage.style.padding = "5px 10px";
+  copyMessage.style.borderRadius = "5px";
+  copyMessage.style.fontSize = "12px";
+  copyMessage.style.zIndex = "1000";
+
+  // Fade out after 2 seconds
+  setTimeout(() => {
+    copyMessage.style.opacity = "0";
+    setTimeout(() => document.body.removeChild(copyMessage), 500);
+  }, 2000);
 }
 
 // Copy password from the generator
 function copyPassword() {
   const password = document.getElementById("passwordField").value;
   copyToClipboard(password, document.querySelector(".btn-outline-light"));
+}
+
+// Update slider value display
+function updateSliderValue(value) {
+  document.getElementById("sliderValue").textContent = value;
 }
 
 // Event listener for slider input
