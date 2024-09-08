@@ -73,11 +73,9 @@ $isUserLoggedIn = isset($_SESSION['user_id']);
     </div>
 </div>
 
-<!-- JavaScript includes -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="js/script.js"></script>
-<script src="js/history.js"></script>
+
 
 <?php
 include('layouts/footer.php');
+
 ?>
