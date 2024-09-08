@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session if not already started
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,9 @@ session_start(); // Start the session if not already started
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="stylesheet" href="assets/css/signup1.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 
 <body>
@@ -26,14 +28,14 @@ session_start(); // Start the session if not already started
             <ul class="navbar-nav ml-auto">
                 <?php if (!isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php"><b>Login</b></a>
+                        <a class="nav-link text-uppercase" href="login.php"><b>Login</b></a>
                     </li>
                     <!-- <li class="nav-item">
                             <a class="nav-link" href="signup.php">Signup</a>
                         </li> -->
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php"><b>Logout</b></a>
+                        <a class="nav-link text-uppercase" href="logout.php"><b>Logout</b></a>
                     </li>
                 <?php endif; ?>
             </ul>

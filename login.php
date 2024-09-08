@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container justify-content-center mt-5">
+    <div class="container justify-content-center custom-mt">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -18,7 +18,7 @@
                         <h2>LOGIN</h2>
                     </div>
                     <div class="card-body">
-                        <!-- Display error message if it exists -->
+                        <!-- Display error message -->
                         <?php
                         session_start();
                         if (isset($_SESSION['error'])) {

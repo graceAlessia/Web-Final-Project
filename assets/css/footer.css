@@ -1,0 +1,58 @@
+/* Footer Styles */
+.footer {
+    background-color: #05051b;
+    color: #D8D8D8;
+    border-top: 2px solid white;
+    padding: 30px 0;
+}
+
+.footer .logo {
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #82C5FF;
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    margin-bottom: 15px;
+}
+
+.contact-item h6 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #82C5FF;
+}
+
+.contact-item p {
+    font-size: 0.8rem;
+    color: #D8D8D8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.social-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.custom-mt {
+    margin-top: 8rem; /* or whatever size you need */
+  }

@@ -22,7 +22,7 @@ h2 {
 .btn-login {
     background-color: white;
     border-color: white;
-    color: #000;
+    color: black;
     font-weight: bold;
     /* text-shadow: 0 0 10px #82C5FF; */
     border-radius: 5px;
@@ -65,3 +65,7 @@ a.text-light:hover {
 .card-body {
     padding: 20px;
 }
+
+.custom-mt {
+    margin-top: 8rem; /* or whatever size you need */
+  }
