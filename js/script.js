@@ -1,9 +1,10 @@
+// Function to generate a password
 function generatePassword() {
-  let length = document.getElementById("lengthSlider").value;
-  let includeUppercase = document.getElementById("uppercase").checked;
-  let includeLowercase = document.getElementById("lowercase").checked;
-  let includeNumbers = document.getElementById("numbers").checked;
-  let includeSymbols = document.getElementById("symbols").checked;
+  const length = document.getElementById("lengthSlider").value;
+  const includeUppercase = document.getElementById("uppercase").checked;
+  const includeLowercase = document.getElementById("lowercase").checked;
+  const includeNumbers = document.getElementById("numbers").checked;
+  const includeSymbols = document.getElementById("symbols").checked;
 
   let characters = "";
   if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -24,60 +25,77 @@ function generatePassword() {
   savePassword(password);
 }
 
+// Save the password to history
 function savePassword(password) {
-  $.post("save_history.php", { password: password }, function (data) {
+  $.post("save_history.php", { password: password }, function () {
     fetchPasswordHistory(); // Refresh history after saving
   });
 }
 
+// Fetch and display password history
 function fetchPasswordHistory() {
   $.get("get_password_history.php", function (data) {
-    let history = JSON.parse(data);
-    let historyList = document.getElementById("passwordHistory");
+    const history = JSON.parse(data);
+    const historyList = document.getElementById("passwordHistory");
     historyList.innerHTML = "";
-    history.forEach(function (password, index) {
-      let listItem = document.createElement("li");
+    history.forEach((password, index) => {
+      const listItem = document.createElement("li");
       listItem.className =
         "list-group-item d-flex justify-content-between align-items-center";
       listItem.innerHTML = `
-              <span>${password}</span>
-              <div>
-                  <button class="btn btn-outline-light btn-sm btn-copy" onclick="copyToClipboard('${password}')" 
-                      style="background: url('assets/imgs/copy.svg') no-repeat center center; background-size: contain; width: 20px; height: 20px; border: none; cursor: pointer;">
-                  </button>
-                  <button class="btn btn-danger btn-sm btn-delete" onclick="deletePassword(${index})">Delete</button>
-              </div>
-          `;
+        <span>${password}</span>
+        <div>
+          <button class="btn btn-outline-light btn-sm btn-copy" onclick="copyToClipboard('${password}', this)" 
+            style="background: url('assets/imgs/copy.svg') no-repeat center center; background-size: contain; width: 20px; height: 20px; border: none; cursor: pointer;">
+          </button>
+          <button class="btn btn-danger btn-sm btn-delete" onclick="deletePassword(${index})">Delete</button>
+        </div>
+      `;
       historyList.appendChild(listItem);
     });
   });
 }
 
+// Clear password history
 function clearHistory() {
-  $.ajax({
-    url: "clear_history.php",
-    type: "DELETE",
-    success: function (result) {
-      fetchPasswordHistory(); // Refresh history after clearing
-    },
-    error: function (xhr) {
-      alert("Error clearing history: " + xhr.responseText);
-    },
-  });
+  if (confirm("Are you sure you want to clear the history?")) {
+    $.ajax({
+      url: "clear_history.php",
+      type: "DELETE",
+      success: function () {
+        fetchPasswordHistory(); // Refresh history after clearing
+      },
+      error: function (xhr) {
+        console.error("Error clearing history: " + xhr.responseText);
+      },
+    });
+  }
 }
 
-function copyToClipboard(password) {
+// Copy password to clipboard
+function copyToClipboard(password, element) {
   const tempInput = document.createElement("input");
   document.body.appendChild(tempInput);
   tempInput.value = password;
   tempInput.select();
   document.execCommand("copy");
   document.body.removeChild(tempInput);
-  // alert("Password copied to clipboard");
 }
 
+// Update slider value display
+function updateSliderValue(value) {
+  document.getElementById("sliderValue").textContent = value;
+}
+
+// Copy password from the generator
+function copyPassword() {
+  const password = document.getElementById("passwordField").value;
+  copyToClipboard(password, document.querySelector(".btn-outline-light"));
+}
+
+// Event listener for slider input
 document.getElementById("lengthSlider").oninput = function () {
-  document.getElementById("sliderValue").textContent = this.value;
+  updateSliderValue(this.value);
 };
 
 // Initialize history on page load

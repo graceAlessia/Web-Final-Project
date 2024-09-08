@@ -18,17 +18,16 @@ h2 {
     box-shadow: 0 0 20px #82C5FF;
     border-radius: 5px;
 }
-
-.btn-login {
+.btn-signup {
     background-color: white;
     border-color: white;
-    color: #000;
+    color: black;
     font-weight: bold;
-    text-shadow: 0 0 10px #82C5FF;
+    /* text-shadow: 0 0 10px #82C5FF; */
     border-radius: 5px;
 }
 
-.btn-login:hover {
+.btn-signup:hover {
     background-color: transparent;
     border-color: white;
     color: white;
@@ -37,7 +36,7 @@ h2 {
 .form-control {
     background-color: transparent; 
     border: 1px solid white;
-    color: #ffff;
+    color: black;
     box-shadow: 0 0 10px #82C5FF;
     border-radius: 5px;
     padding: 10px;
@@ -59,9 +58,28 @@ a.text-light:hover {
 
 .card-header, .card-footer {
     border-bottom: 1px solid white;
-    border-top: 1px solid white;
+    border-top: 1px solid #82C5FF;
 }
 
 .card-body {
     padding: 20px;
+}
+
+/* Additional styles specific to the signup page */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 300;
+    color: white;
+}
+
+.form-group input[type="password"] {
+    background-color: transparent;
+    border: 1px solid white;
+    box-shadow: 0 0 10px #82C5FF;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
 }
