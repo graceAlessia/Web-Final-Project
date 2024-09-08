@@ -19,8 +19,8 @@ h2 {
     border-radius: 5px;
 }
 
-.btn-primary {
-    background-color: #82C5FF;
+.btn-login {
+    background-color: white;
     border-color: white;
     color: #000;
     font-weight: bold;
@@ -28,10 +28,10 @@ h2 {
     border-radius: 5px;
 }
 
-.btn-primary:hover {
-    background-color: #82C5FF;
-    border-color: #82C5FF;
-    color: #000;
+.btn-login:hover {
+    background-color: transparent;
+    border-color: white;
+    color: white;
 }
 
 .form-control {

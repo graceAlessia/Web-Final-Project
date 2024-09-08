@@ -35,11 +35,11 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
+                            <button type="submit" class="btn btn-login btn-block">LOGIN</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="signup.php" class="text-light">Don't have an account? Sign up here.</a>
+                        <a href="signup.php" class="text-light" style="text-decoration: none;">Don't have an account? Sign up here.</a>
                     </div>
                 </div>
             </div>

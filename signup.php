@@ -41,11 +41,11 @@
                                 <label for="confirmPassword">Confirm Password</label>
                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">SIGN UP</button>
+                            <button type="submit" class="btn btn-signup btn-block">SIGN UP</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="login.php" class="text-light">Already have an account? Login here.</a>
+                        <a href="login.php" class="text-light" style="text-decoration: none;">Already have an account? Login here.</a>
                     </div>
                 </div>
             </div>

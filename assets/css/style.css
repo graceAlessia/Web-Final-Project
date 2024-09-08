@@ -6,7 +6,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    font-family: 'Abel', Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -50,7 +50,7 @@ input[type="text"] {
 
 
 button {
-    background-color: #00ffcc;
+    background-color: #82C5FF;
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -87,6 +87,19 @@ button {
     cursor: pointer;
 }
 
+.btn-copy,
+.btn-delete {
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-delete {
+    color: red;
+}
+
 /* 
 .custom-range::-webkit-slider-thumb {
     background-color: #00ffcc;
@@ -110,7 +123,7 @@ button {
 }
 
 .custom-range::-webkit-slider-thumb {
-    background-color: #00ffcc;
+    background-color: #82C5FF;
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
@@ -118,14 +131,14 @@ button {
 }
 
 .custom-range::-moz-range-thumb {
-    background-color: #00ffcc;
+    background-color: #82C5FF;
     width: 15px;
     height: 15px;
     cursor: pointer;
 }
 
 .custom-range::-ms-thumb {
-    background-color: #00ffcc;
+    background-color: #82C5FF;
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -135,11 +148,11 @@ button {
 
 .list-group-item {
     background-color: #0a0a0a;
-    color: #00ffcc;
+    color: #82C5FF;
 }
 
 .list-group-item button {
-    color: #00ffcc;
+    color: #82C5FF;
 }
 
 
